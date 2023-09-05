@@ -59,6 +59,9 @@ public class BoardFrontController extends HttpServlet {
 		String target = request.getRequestURI().substring(request.getContextPath().length());
 		System.out.println(target);
 		Result result = null;
+		 String realPath ="C:\\bbagym-03\\workspace\\bbagym\\src\\main\\webapp\\uploadFile";
+		 ServletContext context = getServletContext();
+         String relativePath = "src/uploadFile";  
 		// 단순한 값비교는 if문보다 switch문이 효율성이 좋고 가독성도 좋다
 		// break문을 꼭 써야된다!
 		switch (target) {
@@ -95,9 +98,7 @@ public class BoardFrontController extends HttpServlet {
 	          case "/gymWriteOk.bo":
 	             System.out.println("글쓰기 완료!!");
 	             
-	             ServletContext context = getServletContext();
-	             String relativePath = "src/uploadFile";             
-	             String realPath ="C:\\bbagym-03\\workspace\\bbagym\\src\\main\\webapp\\uploadFile";
+	                        
 	             result = new GymWriteOkController(realPath).execute(request, response);
 	             request.getRequestDispatcher("gymList.bo").forward(request, response);
 	             break;

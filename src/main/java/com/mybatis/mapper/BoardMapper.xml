@@ -22,6 +22,10 @@
       delete from tbl_board where board_num = #{boardNum}
    </delete>
    
+   <update id="gymUpdate" parameterType="BoardDTO">
+   		update tbl_board set board_name = #{boardName},board_address = #{boardAddress}, board_price = #{boardPrice}, board_content=#{boardContent},board_notice=#{boardNotice},board_category=#{boardCategory},image_name=#{imageName} 
+		where board_num = #{boardNum} 
+   </update>
    
    <!-- 
    <select id="getTotal" resultType="_int">

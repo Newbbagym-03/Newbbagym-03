@@ -99,24 +99,8 @@
         </div>
         </a>
 
-        <!-- 하단 버튼 -->
-        <div class="button-div">
-            <div class="main-button">
-                <button class="button"> <b><<</b> </button>
-                <button class="button"> <b><</b> </button>
-                <button class="button"> <b>1</b> </button>
-                <button class="button"> <b>2</b> </button>
-                <button class="button"> <b>3</b> </button>
-                <button class="button"> <b>4</b> </button>
-                <button class="button"> <b>5</b> </button>
-                <button class="button"> <b>></b> </button>
-                <button class="button"> <b>>></b> </button>
-
-                    </div>
-                <div>
-            </div>
-        </div>
-
+        
+        
     </div> <!-- div container 닫는 태그-->
 <%@include file="../../footer.jsp" %>
 </body>
