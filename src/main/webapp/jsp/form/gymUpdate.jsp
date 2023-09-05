@@ -22,13 +22,14 @@
 
 <div class="all-container"> 
     <form id="form" action="gymUpdateOk.bo" method ="post" enctype="multipart/form-data"><!--서버에 보내기 위해 form 태그를 사용함--> 
+      <input type="hidden" name="boardNum" value="${boardUpdate.getBoardNum()}"/>
         <table><!--테이블 이용 10행, 2열의 표를 만듬-->
             <tr><!--tr은 하나의 행을 의미함-->
                 <th colspan="2">운동시설 등록</th><!--th 제목의 셀을 의미함, colspan=2는 2칸의 셀은 가로로 병합을 의미-->
             </tr>
             <tr>
                 <th>시설명</th>
-                <td><input type="text" value="${boardUpdate.getBoardName()}" id="title" name="boardTitle"></td><!--td는 하나의 셀을 의미-->
+                <td><input type="text" value="${boardUpdate.getBoardName()}" id="title" name="title"></td><!--td는 하나의 셀을 의미-->
                 <!--input text를 이용해 text를 받을 수 있고 placeholder를 이용해 작성 전 안내문구를 표시할 수 있다-->
             </tr>
             <tr>
@@ -93,7 +94,7 @@
             </tr>
         </table>
         <div class="btn-container">
-        <button type="button" value="등록" id="btn"> 등록 </button>
+        <button type="button" value="등록" id="btn"> 수정 </button>
         <!--button을 페이지리로딩과 폼제출을 막아줌 스크립트를 이용하여 입력한 값들을 전송합니다-->
         <!-- submit을 하면 작성했던 글들이 사라지는것을 방지하기 위함 -->
         </div>

@@ -27,7 +27,7 @@ public class BoardDAO {
    public int getTotal() {
             return sqlSession.selectOne("board.getTotal");
          }
-   
+   ;
    //운동시설상세페이지
    public BoardDTO selBoardDetail(int boardNum) {
       return sqlSession.selectOne("board.selBoardDetail", boardNum);

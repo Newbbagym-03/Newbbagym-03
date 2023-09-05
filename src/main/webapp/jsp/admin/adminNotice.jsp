@@ -41,35 +41,36 @@
         </ul>
     </div>
     <!--여기까지 admin_header-->
-    <div class="container">
+  
         <div class="title">
             <h2>공지</h2>
         </div>
         
-        
+          <div class="container">
         <c:choose>
              <c:when test = "${not empty noticeBoardList}">
               <c:forEach var="noticeBoard" items="${noticeBoardList}">
               
-              	<a href="noticeBoardDetail.me?noticeNum=${noticeBoard.getNoticeNum()}">
-		            <div class="div">
-		                <div class="inner-div">
-			                <span class="blueText">[공지]</span>
-			                <c:out value = "${noticeBoard.getNoticeTitle()}"/>
-		                </div>
-		                <div class="date-div">
-			                <span class="date">
-			                <c:out value = "${noticeBoard.getNoticeDate()}"/>
-		                </span>
-		                </div>
-		            </div>
-       			 </a>
-         	</c:forEach>
+                 <a href="noticeBoardDetail.me?noticeNum=${noticeBoard.getNoticeNum()}">
+                  <div class="div">
+                      <div class="inner-div">
+                         <span class="blueText">[공지]</span>
+                         <c:out value = "${noticeBoard.getNoticeTitle()}"/>
+                      </div>
+                      <div class="date-div">
+                         <span class="date">
+                         <c:out value = "${noticeBoard.getNoticeDate()}"/>
+                      </span>
+                      </div>
+                  </div>
+                 </a>
+            </c:forEach>
            </c:when>
          </c:choose>
         
         <!-- 1번째 div -->
         <div class="pagination">
+           <div><!-- 번호들을 묶어주는 박스 -->
         <ul>
           <!-- ========== 페이징 처리 예시 ============ -->
           
@@ -77,20 +78,21 @@
           <li><a href="${pageContext.servletContext.contextPath}/jsp/admin/adminNotice.me?page=${startPage-1}" class="prev">&lt;</a></li>
           </c:if>
           <c:forEach begin="${startPage}" end="${endPage}" var="i">
-          	<li>
-          		<c:if test="${page == i}">
-          			<a href="${pageContext.servletContext.contextPath}/jsp/admin/adminNotice.me?page=${i}" class="active">${i}</a>
-          		</c:if>
-          		<c:if test="${page != i}">
-          			<a href="${pageContext.servletContext.contextPath}/jsp/admin/adminNotice.me?page=${i}">${i}</a>
-          		</c:if>
-          	</li>
+             <li>
+                <c:if test="${page == i}">
+                   <a href="${pageContext.servletContext.contextPath}/jsp/admin/adminNotice.me?page=${i}" class="active">${i}</a>
+                </c:if>
+                <c:if test="${page != i}">
+                   <a href="${pageContext.servletContext.contextPath}/jsp/admin/adminNotice.me?page=${i}">${i}</a>
+                </c:if>
+             </li>
           </c:forEach>
           <c:if test="${next}">
-          	<li><a href="${pageContext.servletContext.contextPath}/jsp/admin/adminNotice.me?page=${endPage+1}" class="next">&gt;</a></li>
+             <li><a href="${pageContext.servletContext.contextPath}/jsp/admin/adminNotice.me?page=${endPage+1}" class="next">&gt;</a></li>
           </c:if>
           <!-- ========== /페이징 처리 예시 ============ -->
         </ul>
+      </div><!-- 번호들을 묶어주는 박스 끝-->   
       </div>
 
         

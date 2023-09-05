@@ -13,15 +13,17 @@ import com.bbagym.app.board.dao.BoardDAO;
 import com.bbagym.app.board.dto.BoardDTO;
 
 public class GymUpdateController implements Execute{
+	
 
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServerException, ServletException {
-		BoardDAO boardDAO = new BoardDAO();
-		int boardNum = Integer.parseInt(request.getParameter("boardNum"));
-		BoardDTO boardDTO = boardDAO.selBoardDetail(boardNum);
-
-		request.setAttribute("boardUpdate", boardDTO);
+			BoardDAO dao = new BoardDAO();
+			
+			int boardNum = Integer.parseInt(request.getParameter("boardNum"));
+			BoardDTO dto = dao.selBoardDetail(boardNum);
+			
+			request.setAttribute("boardUpdate", dto);
 			return null;
 	}
 	

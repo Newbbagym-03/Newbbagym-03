@@ -5,7 +5,8 @@
     height:10%;
     background-color: white;
     position:fixed;
-    left:337px;
+    left:50%;
+    transform: translate(-50%, 0);
     border-bottom: 1px solid  rgba(179, 176, 176,0.7);
     font-family: 'LINESeedKR-Bd';
 }

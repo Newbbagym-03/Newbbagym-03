@@ -54,7 +54,7 @@
                 </td>
             </tr>
             <tr>
-                <th name="price">가격</th>
+                <th>가격</th>
                 <td><input type="text" placeholder="가격을 숫자만으로 입력해주세요. ex)5000" id="price" name="price" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"></td>
                 <!-- 정규식을 이용하여 입력받은 값을 숫자로만 입력 받는다 -->
                 <!--input text를 이용해 text를 받을 수 있고 placeholder를 이용해 작성 전 안내문구를 표시할 수 있다-->

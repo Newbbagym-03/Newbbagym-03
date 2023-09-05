@@ -16,7 +16,7 @@
 <body>
 
     <div class="container">
-        <div class="img-container"><img src="${pageContext.request.contextPath}/uploadFile/logo.png" alt="" id="main-img"></div><!--메인 이미지를 담은 영역-->
+        <div class="img-container"><img src="${pageContext.request.contextPath}/uploadFile/${boardDetail.getImageName()}" alt="" id="main-img"></div><!--메인 이미지를 담은 영역-->
         <div class="title-container"><!--제목 및 주소, 가격을 담을 div영역-->
             <div class="title"><c:out value="${boardDetail.getBoardName()}"/></div>
             <div class="addr-price">
@@ -131,7 +131,7 @@
               <input type="hidden" name="boardNum" value="${boardDetail.getBoardNum()}"/>
                   <button class="last-btn" type="submit" id="update">수정</button>
               </form>
-              <form action="gymDelete.bo" method="post"><!-- <!--  onsubmit="return confirm('정말 삭제하시겠습니까?'); --> -->
+              <form action="gymDelete.bo" method="post"><!-- <!--  onsubmit="return confirm('정말 삭제하시겠습니까?'); --> 
               		<input type="hidden" name="boardNum" value="${boardDetail.getBoardNum()}"/>
                   <button class="last-btn" type="submit" id="delete">삭제</button>
               </form>
